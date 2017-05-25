@@ -26,6 +26,9 @@ namespace nnclmobileappfiap {
         private global::Xamarin.Forms.StackLayout buttonsPanel;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Button loginButton;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.ListView todoList;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
@@ -34,6 +37,7 @@ namespace nnclmobileappfiap {
             syncIndicator = this.FindByName<global::Xamarin.Forms.ActivityIndicator>("syncIndicator");
             newItemName = this.FindByName<global::Xamarin.Forms.Entry>("newItemName");
             buttonsPanel = this.FindByName<global::Xamarin.Forms.StackLayout>("buttonsPanel");
+            loginButton = this.FindByName<global::Xamarin.Forms.Button>("loginButton");
             todoList = this.FindByName<global::Xamarin.Forms.ListView>("todoList");
         }
     }
