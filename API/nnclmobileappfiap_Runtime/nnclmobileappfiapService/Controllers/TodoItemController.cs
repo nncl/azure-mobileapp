@@ -9,6 +9,8 @@ using nnclmobileappfiapService.Models;
 
 namespace nnclmobileappfiapService.Controllers
 {
+    [Authorize] // Gestão de auth e privilégios
+    // Os m]etodos dessa classe serão somente acessados se estiver autenticado
     public class TodoItemController : TableController<TodoItem>
     {
         protected override void Initialize(HttpControllerContext controllerContext)
