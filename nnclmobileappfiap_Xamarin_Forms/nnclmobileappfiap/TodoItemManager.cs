@@ -31,7 +31,7 @@ namespace nnclmobileappfiap
 #if OFFLINE_SYNC_ENABLED
         IMobileServiceSyncTable<TodoItem> todoTable;
 #else
-        IMobileServiceTable<TodoItem> todoTable;
+        IMobileServiceTable<Professor> todoTable;
 #endif
 
         const string offlineDbPath = @"localstore.db";
@@ -49,7 +49,7 @@ namespace nnclmobileappfiap
 
             this.todoTable = client.GetSyncTable<TodoItem>();
 #else
-            this.todoTable = client.GetTable<TodoItem>();
+            this.todoTable = client.GetTable<Professor>();
 #endif
         }
 
@@ -72,10 +72,10 @@ namespace nnclmobileappfiap
 
         public bool IsOfflineEnabled
         {
-            get { return todoTable is Microsoft.WindowsAzure.MobileServices.Sync.IMobileServiceSyncTable<TodoItem>; }
+            get { return todoTable is Microsoft.WindowsAzure.MobileServices.Sync.IMobileServiceSyncTable<Professor>; }
         }
 
-        public async Task<ObservableCollection<TodoItem>> GetTodoItemsAsync(bool syncItems = false)
+        public async Task<ObservableCollection<Professor>> GetTodoItemsAsync(bool syncItems = false)
         {
             try
             {
@@ -85,11 +85,14 @@ namespace nnclmobileappfiap
                     await this.SyncAsync();
                 }
 #endif
-                IEnumerable<TodoItem> items = await todoTable
-                    .Where(todoItem => !todoItem.Done)
+                /*IEnumerable<Professor> items = await todoTable
+                    .Where(todoItem => !todoItem.Aprovado)
+                    .ToEnumerableAsync();*/
+
+                IEnumerable<Professor> items = await todoTable
                     .ToEnumerableAsync();
 
-                return new ObservableCollection<TodoItem>(items);
+                return new ObservableCollection<Professor>(items);
             }
             catch (MobileServiceInvalidOperationException msioe)
             {
@@ -102,7 +105,7 @@ namespace nnclmobileappfiap
             return null;
         }
 
-        public async Task SaveTaskAsync(TodoItem item)
+        public async Task SaveTaskAsync(Professor item)
         {
             if (item.Id == null)
             {

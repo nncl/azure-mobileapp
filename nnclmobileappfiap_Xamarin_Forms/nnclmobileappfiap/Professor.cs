@@ -46,11 +46,13 @@ namespace nnclmobileappfiap
             set { nome = value; }
         }
 
-        [JsonProperty(PropertyName = "complete")]
+        [JsonProperty(PropertyName = "aprovado")]
         public bool Aprovado
         {
             get { return aprovado; }
             set { aprovado = value; }
         }
+
+        // TODO Add version
     }
 }

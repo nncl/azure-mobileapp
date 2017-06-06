@@ -22,5 +22,3 @@ C:\Users\AlunoFIAP\Documents\Visual Studio 2017\Projects\Azure\nnclmobileappfiap
 C:\Users\AlunoFIAP\Documents\Visual Studio 2017\Projects\Azure\nnclmobileappfiap_Xamarin_Forms\nnclmobileappfiap\obj\Debug\nnclmobileappfiap.pdb
 C:\Users\AlunoFIAP\Documents\Visual Studio 2017\Projects\Azure\nnclmobileappfiap_Xamarin_Forms\nnclmobileappfiap\obj\Debug\nnclmobileappfiap.dll.mdb
 C:\Users\AlunoFIAP\Documents\Visual Studio 2017\Projects\Azure\nnclmobileappfiap_Xamarin_Forms\nnclmobileappfiap\bin\Debug\nnclmobileappfiap.dll.mdb
-C:\Users\AlunoFIAP\Documents\Visual Studio 2017\Projects\Azure\nnclmobileappfiap_Xamarin_Forms\nnclmobileappfiap\obj\Debug\nnclmobileappfiap.dll.mdb
-C:\Users\AlunoFIAP\Documents\Visual Studio 2017\Projects\Azure\nnclmobileappfiap_Xamarin_Forms\nnclmobileappfiap\bin\Debug\nnclmobileappfiap.dll.mdb

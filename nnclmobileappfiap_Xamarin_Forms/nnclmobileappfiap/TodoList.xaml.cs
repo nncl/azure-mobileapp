@@ -56,22 +56,26 @@ namespace nnclmobileappfiap
         #endregion
 
         // Data methods
-        async Task AddItem(TodoItem item)
+        async Task AddItem(Professor item)
         {
+            item.Email = "teste@test.com";
+            item.Rm = "123";
+            item.Aprovado = true;
+            // item.Id = "123";
             await manager.SaveTaskAsync(item);
             todoList.ItemsSource = await manager.GetTodoItemsAsync();
         }
 
-        async Task CompleteItem(TodoItem item)
+        async Task CompleteItem(Professor item)
         {
-            item.Done = true;
+            item.Aprovado = true;
             await manager.SaveTaskAsync(item);
             todoList.ItemsSource = await manager.GetTodoItemsAsync();
         }
 
         public async void OnAdd(object sender, EventArgs e)
         {
-            var todo = new TodoItem { Name = newItemName.Text };
+            var todo = new Professor { Nome = newItemName.Text };
             await AddItem(todo);
 
             newItemName.Text = string.Empty;
@@ -81,18 +85,18 @@ namespace nnclmobileappfiap
         // Event handlers
         public async void OnSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var todo = e.SelectedItem as TodoItem;
+            var todo = e.SelectedItem as Professor;
             if (Device.OS != TargetPlatform.iOS && todo != null)
             {
                 // Not iOS - the swipe-to-delete is discoverable there
                 if (Device.OS == TargetPlatform.Android)
                 {
-                    await DisplayAlert(todo.Name, "Press-and-hold to complete task " + todo.Name, "Got it!");
+                    await DisplayAlert(todo.Nome, "Press-and-hold to complete task " + todo.Nome, "Got it!");
                 }
                 else
                 {
                     // Windows, not all platforms support the Context Actions yet
-                    if (await DisplayAlert("Mark completed?", "Do you wish to complete " + todo.Name + "?", "Complete", "Cancel"))
+                    if (await DisplayAlert("Mark completed?", "Do you wish to complete " + todo.Nome + "?", "Complete", "Cancel"))
                     {
                         await CompleteItem(todo);
                     }
@@ -107,7 +111,7 @@ namespace nnclmobileappfiap
         public async void OnComplete(object sender, EventArgs e)
         {
             var mi = ((MenuItem)sender);
-            var todo = mi.CommandParameter as TodoItem;
+            var todo = mi.CommandParameter as Professor;
             await CompleteItem(todo);
         }
 
